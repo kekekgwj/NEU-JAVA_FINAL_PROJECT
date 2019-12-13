@@ -1,0 +1,64 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.control.TextField?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:id="borderPane" fx:controller="sample.Controller" stylesheets="@style.css"  styleClass="root">
+    <top>
+        <VBox  minHeight="400" maxHeight="400" styleClass="dark-gray-theme">
+
+            <Label fx:id="content" id="content-header"/>
+            <GridPane fx:id="gridpane"  vgap="10" hgap="10"/>
+        </VBox>
+    </top>
+
+
+    <bottom>
+
+        <VBox styleClass="gray-theme">
+        <HBox>
+            <Button id = "uploadBottom" text="UPLOAD IMAGE" onAction="#upload" styleClass="btn-basic">upload</Button>
+
+        </HBox>
+
+        <HBox>
+            <TextField fx:id="heightText"  promptText="0" prefWidth="75"  styleClass="input-group"></TextField>
+            <TextField fx:id="widthText"   promptText="0" prefWidth="75"  styleClass="input-group"></TextField>
+            <ChoiceBox fx:id="multBox"  prefHeight="30" value="gif" prefWidth="150"
+                       GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="check-box,box">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="jpg" />
+                        <String fx:value="gif" />
+                        <String fx:value="jpeg" />
+                        <String fx:value="png" />
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+
+        </HBox>
+
+        <HBox>
+            <Button id = "convertBottom" text="CONVERT IMAGE" onAction="#convert" styleClass="btn-basic">convert</Button>
+            <Button id = "saveBottom" text="SAVE IMAGE" onAction="#save" styleClass="btn-basic">save</Button>
+
+
+        </HBox>
+        </VBox>
+    </bottom>
+
+
+
+
+</BorderPane>
